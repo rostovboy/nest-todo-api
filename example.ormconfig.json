@@ -2,9 +2,9 @@
   "type": "mysql",
   "host": "localhost",
   "port": 3306,
-  "username": "nest_todo",
-  "password": "aa060402",
-  "database": "nest_todo",
+  "username": "db_user",
+  "password": "password",
+  "database": "db_name",
   "entities": ["dist/**/*.entity{.ts,.js}"],
   "synchronize": true
 }
