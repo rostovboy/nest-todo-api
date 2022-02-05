@@ -1,0 +1,11 @@
+npm i -g @nestjs/cli
+nest new project-name
+
+//https://docs.nestjs.com/techniques/database#typeorm-integration
+npm install --save @nestjs/typeorm typeorm mysql2
+create ormconfig.json
+import in app.module.ts
+
+nest generate module modules/todos
+
+создаем todo.entity.ts
