@@ -1,0 +1,27 @@
+services:
+  app:
+    env_file:
+      - .env
+    ports:
+      - ${PORT}:${PORT}
+    command: bash -c "npm install && npm run start:prod"
+    environment:
+      VIRTUAL_HOST: ${VIRTUAL_HOST}
+      VIRTUAL_PORT: ${PORT}
+      LETSENCRYPT_HOST: ${LETSENCRYPT_HOST}
+      LETSENCRYPT_EMAIL: ${LETSENCRYPT_EMAIL}
+    networks:
+      - appnetwork
+      - default
+    
+  db:
+    logging:
+      driver: json-file
+
+networks:
+  appnetwork:
+    name: ${APP_NAME}
+    driver: bridge
+  default:
+    external:
+      name: nginx-proxy
