@@ -15,3 +15,20 @@ nest generate module modules/todos
 //////////////////
 
 nest generate controller controllers/todos
+
+
+//////////////////
+Deploy
+
+cd deploy folder
+git clone git@github.com:rostovboy/nest-todo-api.git todo.subtask.ru
+cd todo.subtask.ru
+cp example.env .env
+cp example.ormconfig.json ormconfig.json
+/// change settings
+nano .env
+nano ormconfig.json
+// нужно изучить https://betterprogramming.pub/typeorm-migrations-explained-fdb4f27cb1b3 (нужно ли в продакшене использовать syncronize true)
+docker-compose -f docker-compose.yml -f docker-compose.prod.yml up -d
+
+git pull origin master // загрузить изменения с git
