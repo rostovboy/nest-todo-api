@@ -32,3 +32,6 @@ nano ormconfig.json
 docker-compose -f docker-compose.yml -f docker-compose.prod.yml up -d
 
 git pull origin master // загрузить изменения с git
+
+
+// https://github.com/lujakob/nestjs-realworld-example-app
