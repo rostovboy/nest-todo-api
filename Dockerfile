@@ -8,4 +8,4 @@ COPY package*.json ./
 
 COPY . .
 
-CMD ["npm", "run", "start"]
+#CMD ["npm", "run", "start"]
